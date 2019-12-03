@@ -66,10 +66,13 @@ align-items: center;
 }
     
     
- 
+    
   </style>
   <script>
- var quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
+    
+    
+    
+var quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "*dying pigeon sounds*", "<q>did y'all think we'd have this kind of friendship? just kidding we're not friends.</q>", 
  "<q>Ivan has a little creepy perdophile smile.</q>", "<q>You freaking boomer!</q>",
  "<q>Shove this up your peepee hole!</q>", "<q>Your mom should've aborted you Ivan.</q>",
@@ -84,7 +87,6 @@ let i = true
 var image1 = document.getElementById("image1")
 var text1 = document.getElementById("text")
 var score = document.getElementById("score")
-console.log(data)
 var quote = quotes[Math.floor(Math.random()*quotes.length)];
 function Intro(){
 if (x == true){
@@ -127,7 +129,6 @@ setTimeout(
 document.body.style.backgroundColor = "white"
 text1.style.color = "black"
 text1.style.fontSize = "140px"
-
     },
     1300
   );
@@ -136,7 +137,6 @@ text1.style.fontSize = "140px"
 document.body.style.backgroundColor = "black"
 text1.style.color = "white"
 text1.style.fontSize = "160px"
-
     },
     1400
   );
@@ -145,7 +145,6 @@ text1.style.fontSize = "160px"
 document.body.style.backgroundColor = "white"
 text1.style.color = "black"
 text1.style.fontSize = "180px"
-
     },
     1500
   );
@@ -154,7 +153,6 @@ text1.style.fontSize = "180px"
 document.body.style.backgroundColor = "black"
 text1.style.color = "white"
 text1.style.fontSize = "200px"
-
     },
     1600
   );
@@ -163,7 +161,6 @@ text1.style.fontSize = "200px"
 document.body.style.backgroundColor = "white"
 text1.style.color = "black"
 text1.style.fontSize = "220px"
-
     },
     1700
   );
@@ -172,7 +169,6 @@ text1.style.fontSize = "220px"
 document.body.style.backgroundColor = "black"
 text1.style.color = "white"
 text1.style.fontSize = "240px"
-
     },
     1800
   );
@@ -198,7 +194,6 @@ bound1 = false
 }, 12 * 1000
 );
 }
-
 function ActualRotation(){
 if (bound1 == true){
   image1.style.transitionDuration = "0.2s"
@@ -212,7 +207,6 @@ if (bound1 == true){
   y *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var r = Math.floor((Math.random() * 1000) + 0);
   r *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
-
   image1.style.transform = "translate(" + x + "px, " + y + "px) rotate(" + r + "deg)"
   setTimeout(
     () => {
@@ -265,17 +259,14 @@ if (bound1 == false){
     },
     1000
   );
-
 }
 }
 function pickColor(){
     r = Math.random() * (254 - 0) + 222;
     g = Math.random() * (254 - 0) + 222;
     b = Math.random() * (254 - 0) + 222;
-
     Color = 'rgb('+r+','+g+', '+b+')';
 }
-
 function DarkMode(){
   document.body.style.backgroundColor = "#F3FFE3"
   document.getElementById("graph").style.color = "rgb(138, 138, 138)"
@@ -284,7 +275,6 @@ function DarkMode(){
   button1.parentNode.removeChild(button1)
   pickColor()
   document.getElementById("body").style.backgroundColor = Color
-
 }
 function chngButton(x, y){
   document.getElementById(x).style.color = "#525252"
@@ -295,18 +285,15 @@ function chngBack(x, y){
   document.getElementById(x).style.color = y
   document.getElementById(x).style.backgroundColor = "#525252"
 }
-
 function imgRotation(){
 if (i == true){
   document.getElementById("image1").style.transitionDuration = "2s"
   document.getElementById("image1").style.transform = "rotate(-720deg)"
 }}
-
 function backNormal (){
   if (i == true){
   document.getElementById("image1").style.transform = "rotate(0deg)"
 }}
-
 function Bigger(){
   button1.parentNode.removeChild(button1)
   graph.parentNode.removeChild(graph)
@@ -318,11 +305,9 @@ function EndColor(){
     r = Math.random() * (254 - 0) + 0;
     g = Math.random() * (254 - 0) + 0;
     b = Math.random() * (254 - 0) + 0;
-
     Color2 = 'rgb('+r+','+g+', '+b+')';
 }
 function TitleColor(){
-
     r = Math.random() * (150 - 0) + 0;
     g = Math.random() * (150 - 0) + 0;
     b = Math.random() * (150 - 0) + 0;
@@ -332,9 +317,8 @@ function TitleColor(){
 setTimeout(() =>{
 TitleColor()
 }, 1000
-
 )
-}
+}   
   </script>
   
   
