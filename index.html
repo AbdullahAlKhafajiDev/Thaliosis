@@ -79,6 +79,8 @@ var quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "<q>I've learned so much from Tik Tok, white people gang signs, real gang signs. </q>",
  "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEWO MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
+var photos = ["20191201015858.jpg", "IMG_20191121_161344.jpg", "IMG_20191201_013003.jpg", "Snapchat-840218918.jpg", "arts_snapshot-6.jpg"]
+let photo = photos[Math.floor(Math.random()*photos.length)];
 let bound1 = true;
 let Thalias = 0;
 let respose;
@@ -195,6 +197,8 @@ bound1 = false;
 function ActualRotation(){
 if (bound1 == true){
   document.getElementById("image1").style.transitionDuration = "0.2s";
+  photo = photos[Math.floor(Math.random()*photos.length)];
+  document.getElementById("image1").src = photo
   EndColor();
   document.body.style.transitionDuration = "0.2s";
   document.body.style.backgroundColor = Color2;
@@ -208,6 +212,8 @@ if (bound1 == true){
   document.getElementById("image1").style.transform = "translate(" + x + "px, " + y + "px) rotate(" + r + "deg)";
   setTimeout(
     () => {
+  photo = photos[Math.floor(Math.random()*photos.length)];
+  document.getElementById("image1").src = photo
   EndColor();
   document.body.style.transitionDuration = "0.2s";
   document.body.style.backgroundColor = Color2;
