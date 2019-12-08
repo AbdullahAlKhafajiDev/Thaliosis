@@ -104,8 +104,6 @@ quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEWO MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
 photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
 ///Image Preloader
-var Ivan = new Image()
-Ivan.src = "Ivan Photos/canvas.png"
 function preloadImage(url)
 {
     var img=new Image();
@@ -116,8 +114,8 @@ preloadImage("Thalia Photos/Disgusted.jpg")
 preloadImage("Thalia Photos/Gun.jpg")
 preloadImage("Thalia Photos/Heart.jpg")
 preloadImage("Thalia Photos/Sibling.jpg")
-
 let photo = photos[Math.floor(Math.random()*photos.length)];
+document.getElementById("image1").src = photo
 let bound1 = true;
 let Thalias = 0;
 let respose;
