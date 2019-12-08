@@ -1,4 +1,5 @@
-<button id = "button2" onmouseover="chngButton('button2', '#ffc1ab', 'black')" onmouseout="chngBack('button2', 'black', '#ffe1d6')">Coming soon</button>
+<button id = "button2" onclick="Change2ivan()" onmouseover="chngButton('button2', '#ffc1ab', 'black')" onmouseout="chngBack('button2', 'black', '#ffe1d6')">Da'quavious Mode</button>
+
 <div>
 <body id = "body">
   
@@ -21,7 +22,7 @@ img {
   position: static;
   width: 200px;
   height: 200px;
-  object-fit: fill;
+  object-fit: cover;
   border: 5px solid #525252;
   border-radius: 50%;
   transition-duration: 0.4s;
@@ -35,7 +36,7 @@ p {
   font-style: 26px;
   margin: 3%;
 }
-button {
+#button1 {
 font-size: 40px;
 color: #ffffff;
 background-color: #525252;
@@ -64,7 +65,7 @@ align-items: center;
   align-items: center;
   transform: translate(-530px,-360px);
   opacity: 0;
-   }
+}
 #button2 {
 position: fixed;
 transform: translate(-83vh, -47vh);
@@ -83,29 +84,43 @@ box-shadow: 0 0px 6px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 transition-duration: 0.4s;
 cursor: pointer;  
 }
-
     
     
     
   </style>
   <script>
-    
-    
-    
-var quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
+let switch2 = false
+let quotes;
+let photos;
+let level1 = 500
+let level2 = 1000
+let counter = false
+quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "*dying pigeon sounds*", "<q>did y'all think we'd have this kind of friendship? just kidding we're not friends.</q>", 
- "<q>Ivan has a little creepy perdophile smile.</q>", "<q>You freaking boomer!</q>",
+ "<q>Ivan has a little creepy pedophile smile.</q>", "<q>You freaking boomer!</q>",
  "<q>Shove this up your peepee hole!</q>", "<q>Your mom should've aborted you Ivan.</q>",
  "<q>I've learned so much from Tik Tok, white people gang signs, real gang signs. </q>",
  "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEWO MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
-var photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
+photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]///Image Preloader
+var Ivan = new Image()
+Ivan.src = "Ivan Photos/canvas.png"
+for (h = -1; h <= photos.length; h++) {
+    photos[h] = new Image();
+    photos[h].src = [h];
+    var timesRun = 0
+    timesRun = timesRun + 1
+    if (timesRun = photos.length){
+    break
+    }
+}
 let photo = photos[Math.floor(Math.random()*photos.length)];
 let bound1 = true;
 let Thalias = 0;
 let respose;
 let x = true;
 let i = true;
+let switch1 = 1;
 var score = document.getElementById("score");
 var quote = quotes[Math.floor(Math.random()*quotes.length)];
 function Intro(){
@@ -118,11 +133,16 @@ document.getElementById("image1").style.border = "3px solid #525252";
 document.body.style.transitionDuration = "0.5s";
 document.body.style.backgroundColor = "rgb(158, 184, 185)";
 graph.parentNode.removeChild(graph);
-button1.parentNode.removeChild(button1);
 button2.parentNode.removeChild(button2);
+button1.parentNode.removeChild(button1);
 document.getElementById("image1").style.transitionDuration = "0s";
 document.getElementById("image1").style.opacity = "0";
+if (switch2 == false){
 document.getElementById("text").innerHTML = "mental";
+}
+if (switch2 == true){
+document.getElementById("text").innerHTML = "dodge";
+}
 document.getElementById("text").style.opacity = "100";
 setTimeout(
     () => {
@@ -131,7 +151,12 @@ document.body.style.backgroundColor = "white";
 document.getElementById("text").style.transitionDuration = "0.3s";
 document.getElementById("text").style.color = "black";
 document.getElementById("text").style.fontSize = "100px";
+if (switch2 == false){
 document.getElementById("text").innerHTML = "BREAKDOWN!";
+}
+if (switch2 == true){
+document.getElementById("text").innerHTML = "HOES!";
+}
     },
     800
   );
@@ -207,7 +232,12 @@ document.getElementById("score").style.opacity = "1";
 x = false
 if (bound1 == true){
   document.getElementById("score").style.textShadow = "0px 0px 10px #ffffff";
+  if (switch2 == false){
   document.getElementById("score").innerHTML = "Thalias captured " + Thalias;
+  }
+  if (switch2 == true){
+  document.getElementById("score").innerHTML = "Hoes dodged " + Thalias;
+  }  
   Thalias = 1 + Thalias;
   };
 setTimeout(() => {
@@ -217,6 +247,10 @@ bound1 = false;
 }
 function ActualRotation(){
 if (bound1 == true){
+  if (switch2 == true){
+    level1 = 300
+    level2 = 600
+  }
   document.getElementById("image1").style.transitionDuration = "0.2s";
   photo = photos[Math.floor(Math.random()*photos.length)];
   document.getElementById("image1").src = photo
@@ -246,13 +280,13 @@ if (bound1 == true){
   r *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   document.getElementById("image1").style.transform = "translate(" + x + "px, " + y + "px) rotate(" + r + "deg)";
     },
-    500
+    level1
   );
  setTimeout(
     () => {
     ActualRotation();
     },
-    1000
+    level2
   );
 }
 if (bound1 == false){
@@ -262,6 +296,7 @@ if (bound1 == false){
   document.getElementById("score").style.fontSize = "50px";
   document.getElementById("score").style.transform = "translate(0, 0)";
   Thalias = Thalias - 1;
+  if (switch2 == false){
   if (Thalias < 2){
     response = "stop recording and help Ivan.";
   }
@@ -274,7 +309,29 @@ if (bound1 == false){
   if (Thalias > 7){
     response = "alright Pablo hold the table before she flips it.";
   }
-    document.getElementById("score").innerHTML = "You tried to stop Thalia's mental breakdown " + Thalias + " times, " + response;
+  document.getElementById("score").innerHTML = "You tried to stop Thalia's mental breakdown " + Thalias + " times, " + response;
+  }
+  if (switch2 == true){
+  if (Thalias < 1){
+    response = "Ivan's getting A LOT of hair compliments.";
+  }
+  if (Thalias == 1){
+    response = "now you get how hard it is to be Ivan.";
+  }
+  if (Thalias == 2){
+    response = "Ivan's still getting beat up by Thalia.";
+  }
+  if (Thalias == 3){
+    response = "Ivan's getting beat up by Leia.";
+  }
+  if (Thalias == 3 || Thalias == 4 ){
+    response = "didn't think I'd see the day.. I'm so proud ^_^";
+  }  
+  if (Thalias > 4){
+    response = "if the browser didn't lag or glitch... then you is a LEGEND and I officially owe you a baggie full of 100 pennies!";
+  }    
+  document.getElementById("score").innerHTML = "Ivan has successfuly dodged " + Thalias + " females, " + response;
+  }
  setTimeout(
     () => {
     document.getElementById("score").style.transitionDuration = "0.5s";
@@ -293,13 +350,17 @@ function pickColor(){
     Color = 'rgb('+r+','+g+', '+b+')';
 }
 function DarkMode(){
-  document.body.style.backgroundColor = "#F3FFE3"
+  if (counter == false){
+  image1.parentNode.removeChild(image1)
+  button2.parentNode.removeChild(button2)
   document.getElementById("graph").style.color = "rgb(138, 138, 138)"
+  document.getElementById("button1").innerHTML = "Another Quote"
+  counter = true
+  }
+  quote = quotes[Math.floor(Math.random()*quotes.length)];
   document.getElementById("graph").innerHTML = quote
-  document.getElementById("image1").style.borderColor = ""
-  button1.parentNode.removeChild(button1)
   pickColor()
-  document.getElementById("body").style.backgroundColor = Color
+  document.body.style.backgroundColor = Color
 }
 function chngButton(x, y, z){
   document.getElementById(x).style.color = z
@@ -343,12 +404,77 @@ setTimeout(() =>{
 TitleColor()
 }, 1000
 )
-}   
+}
+function Change2ivan() {
+if (switch1 == 1) {
+switch2 = true
+quotes = ["<q>das tuff</q>", "<q>das crazy</q>", "<q>sounds like a personal problem</q>", "<q>you probably shoudn't do that</q>", "<q>yOu LiStEn To NaV???</q>", "*silence*", "*sigh*", "*fixes hair*", "*SIGHHHH*", "<q>welcome back to my channel</q>", "<q>welcome to my vlog</q>", "<q>gotta get that YouTube ad revenue</q>", "<q>I'm not corny</q>", "<q>bush did 9/11</q>", "<q>if you think about it... Gum doesn't become tasteless once you chew on it for a while, it becomes the flavor of your mouth</q>", "<q>if you think about it... If the FBI are really listening to our conversations they'll understand all of our inside jokes.</q>", "<q>if you think about it... Ads that say 99% of people can't beat this level are correct because 99% of people don't download them</q>", "<q>if you think about it... If your kids are troublemakers, you are a troublemakermaker</q>", "<q>if you think about it... when you mispell the word 'mispelled' it will still be mispelled.</q>", "<q>if you think about it... your phone wastes battery telling you how much battery is left.</q>", "<q>if you think about it... it's completely possible that our noses have a smell and we've all adapted to it.</q>", "<q>if you think about it... By abbreviating 'Win' to 'W' you're making it longer to say</q>", "<q>if you think about it... the one language Duolingo can’t teach is sign language</q>", "<q>birds aren't real</q>"]
+quote = quotes[Math.floor(Math.random()*quotes.length)];
+photos = ["Ivan Photos/Adjust hair.jpg", "Ivan Photos/Another bathroom smile.jpg", "Ivan Photos/Bathroom smile.jpg", "Ivan Photos/Book big smile.jpg", "Ivan Photos/Nugget.jpg", "Ivan Photos/Phone bus.jpg", "Ivan Photos/Side ways look.jpg", "Ivan Photos/Weird Look pt 3.jpg"]
+document.getElementById("image1").src = "Ivan Photos/canvas.png"
+document.getElementById("button2").innerHTML = "Thalia Mode"
+document.getElementById("button2").style.transitionDuration = "1s"
+document.getElementById("button2").style.backgroundColor = "#d6fcff"
+document.getElementById("graph").innerHTML = "Ughhhh..."  
+document.body.style.transitionDuration = "1s"
+document.body.style.backgroundColor = "#ffe1d6"
+document.getElementById("button2").onmouseover = function(){
+chngButton('button2', '#a4faff', 'black');SlowMo();
+}
+document.getElementById("button2").onmouseout = function(){
+chngBack('button2', 'black', '#d6fcff')
+}
+for (h = -1; h <= photos.length; h++) {
+    photos[h] = new Image();
+    photos[h].src = [h];
+    var timesRun = 0
+    timesRun = timesRun + 1
+    if (timesRun = photos.length){
+    break
+    }
+}
+setTimeout(() => {
+switch1 = switch1 - 1
+}, 1
+)
+}
+if (switch1 == 0){
+switch2 = false
+quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
+ "*dying pigeon sounds*", "<q>did y'all think we'd have this kind of friendship? just kidding we're not friends.</q>", 
+ "<q>Ivan has a little creepy pedophile smile.</q>", "<q>You freaking boomer!</q>",
+ "<q>Shove this up your peepee hole!</q>", "<q>Your mom should've aborted you Ivan.</q>",
+ "<q>I've learned so much from Tik Tok, white people gang signs, real gang signs. </q>",
+ "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
+ "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEWO MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
+quote = quotes[Math.floor(Math.random()*quotes.length)];
+photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
+document.getElementById("image1").src = "Thalia Photos/Sibling.jpg"
+document.getElementById("button2").innerHTML = "Da'quavious Mode"
+document.getElementById("button2").style.transitionDuration = "1s"
+document.getElementById("button2").style.backgroundColor = "#ffe1d6"
+document.getElementById("graph").innerHTML = "Hi, I'm Thalia, and I'm boutta have another mental breakdown"  
+document.body.style.transitionDuration = "1s"
+document.body.style.backgroundColor = "#d6fcff"
+document.getElementById("button2").onmouseover = function(){
+chngButton('button2', '#ffc1ab', 'black');SlowMo();
+}
+document.getElementById("button2").onmouseout = function(){
+chngBack('button2', 'black', '#ffe1d6')
+}
+setTimeout(() => {
+switch1 = switch1 + 1
+}, 1
+)
+}
+}
+function SlowMo() {
+document.getElementById("button2").style.transitionDuration = "0.4s"
+}
   </script>
   
   
-  
-  <img id = "image1" onclick="Intro()" onmouseover="imgRotation()" onmouseout="backNormal()" src="Thalia Photos/Sibling.jpg" 
+  <img id = "image1" onclick="Intro()" onmouseover="imgRotation()" onmouseout="backNormal()" src="Thalia Photos/Bg smile.jpg" 
        alt="PlayCode logo">
   <p id = "graph"   >Hi, I'm Thalia, and I'm boutta have another mental breakdown
  </p>
