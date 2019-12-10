@@ -1,4 +1,5 @@
 <button id = "button2" onclick="Change2ivan()" onmouseover="chngButton('button2', '#ffc1ab', 'black')" onmouseout="chngBack('button2', 'black', '#ffe1d6')">Da'quavious Mode</button>
+<p id = "update" onclick = "WhatsNew()">latest update: 12/10/19 - 3:59 am</p>
 
 <div>
 <body id = "body">
@@ -28,7 +29,7 @@ img {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-p {
+#graph {
   position: relative;
   color: black;
   font-size: 30px;
@@ -84,6 +85,12 @@ box-shadow: 0 0px 6px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 transition-duration: 0.4s;
 cursor: pointer;  
 }
+#update{
+  position: absolute;
+  top: 0;
+  right: 30;
+  text-align: left;
+}
     
     
     
@@ -134,6 +141,7 @@ document.getElementById("image1").style.border = "3px solid #525252";
 document.body.style.transitionDuration = "0.5s";
 document.body.style.backgroundColor = "rgb(158, 184, 185)";
 graph.parentNode.removeChild(graph);
+update.parentNode.removeChild(update);
 button2.parentNode.removeChild(button2);
 button1.parentNode.removeChild(button1);
 document.getElementById("image1").style.transitionDuration = "0s";
@@ -147,6 +155,7 @@ document.getElementById("text").innerHTML = "dodge";
 document.getElementById("text").style.opacity = "100";
 setTimeout(
     () => {
+document.getElementById("text").style.fontWeight = "400";
 document.body.style.transitionDuration = "0.5s";
 document.body.style.backgroundColor = "white";
 document.getElementById("text").style.transitionDuration = "0.3s";
@@ -303,7 +312,7 @@ if (bound1 == false){
     response = "stop recording and help Ivan.";
     }
     if (choices == 1){
-    response = "Abdul is sitting right there smiling and anticipating a disaster..";
+    response = "Abdul is sitting right there smiling and anticipating a disaster.";
     }
   }
   if (Thalias >= 2 && Thalias <= 4){
@@ -395,6 +404,7 @@ function pickColor(){
 }
 function DarkMode(){
   if (counter == false){
+  update.parentNode.removeChild(update)
   image1.parentNode.removeChild(image1)
   button2.parentNode.removeChild(button2)
   document.getElementById("graph").style.color = "rgb(138, 138, 138)"
@@ -528,6 +538,9 @@ switch1 = switch1 + 1
 }
 function SlowMo() {
 document.getElementById("button2").style.transitionDuration = "0.4s"
+}
+function WhatsNew(){
+  document.getElementById("update").innerHTML = "What's new: <br>- dual consequence for all scores. <br>- winning screen for 10 pts <br> in normal Thalia mode.<br>- documented updates. <br>- thinner font in some places."
 }
   </script>
   
