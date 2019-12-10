@@ -103,7 +103,6 @@ quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEOW MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
 photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
-///Image Preloader
 function preloadImage(url)
 {
     var img=new Image();
@@ -115,6 +114,8 @@ preloadImage("Thalia Photos/Gun.jpg")
 preloadImage("Thalia Photos/Heart.jpg")
 preloadImage("Thalia Photos/Sibling.jpg")
 let photo = photos[Math.floor(Math.random()*photos.length)];
+let choices = Math.floor(Math.random() * 2)
+let timer = 1000
 let bound1 = true;
 let Thalias = 0;
 let respose;
@@ -298,16 +299,44 @@ if (bound1 == false){
   Thalias = Thalias - 1;
   if (switch2 == false){
   if (Thalias < 2){
+    if (choices == 0){
     response = "stop recording and help Ivan.";
+    }
+    if (choices == 1){
+    response = "Abdul is sitting right there smiling and anticipating a disaster..";
+    }
   }
-  if (Thalias == 2 || Thalias == 3 || Thalias == 4){
+  if (Thalias >= 2 && Thalias <= 4){
+    if (choices == 0){
     response = "Abdul snap out of your Hiroshima flashback and stop Thalia.";
+    }
+    if (choices == 1){
+    response = "Ivan says in an attempt to calm the atmosphere 'you probably shouldn't do that.";
+    }
   }
-  if (Thalias == 5 || Thalias == 6 || Thalias == 7){
-    response = "ok Leia thanks for the contribution.";
+  if (Thalias >= 5 && Thalias <= 7){
+    if (choices == 0){
+    response = "Leia's reminding Thalia that everyone can see what's happening in that room, and shit will go downhill if the Librarian sees us.";
+    }
+    if (choices == 1){
+    response = "Leia's thinking about throwing Ivan off a building for not helping.";
+    }
   }
-  if (Thalias > 7){
-    response = "alright Pablo hold the table before she flips it.";
+  if (Thalias >= 7 && Thalias <= 10){
+    if (choices == 0){
+    response = "Pablo's holding the table down with both hands so Thalia wouldn't flip it.";
+    }
+    if (choices == 1){
+    response = "Abdul's thinking about which drug would instantly knock out Thalia if she doesn't calm down.";
+    }
+  }
+  if (Thalias > 10){
+    if (choices == 0){
+    response = "Thalia has finally realized what was going on and snapped out of her mental breakdown... Good Job :D";
+    }
+    if (choices == 1){
+    response = "press F to pay respects to Ivan for being a major help during that incident.";
+    }
   }
   document.getElementById("score").innerHTML = "You tried to stop Thalia's mental breakdown " + Thalias + " times, " + response;
   }
@@ -394,15 +423,26 @@ function EndColor(){
     Color2 = 'rgb('+r+','+g+', '+b+')';
 }
 function TitleColor(){
-    r = Math.random() * (200 - 0) + 0;
-    g = Math.random() * (200 - 0) + 0;
-    b = Math.random() * (200 - 0) + 0;
+    r = Math.random() * (150 - 0) + 0;
+    g = Math.random() * (150 - 0) + 0;
+    b = Math.random() * (150 - 0) + 0;
     Color3 = 'rgb('+r+','+g+', '+b+')';
+
+  if (Thalias > 10){
+    timer = 750
+    r = Math.random() * (150 - 0) + 150;
+    g = Math.random() * (150 - 0) + 150;
+    b = Math.random() * (150 - 0) + 150;
+    Color4 = 'rgb('+r+','+g+', '+b+')';
+    document.body.style.backgroundColor = Color4
+    document.getElementById("score").style.transitionDuration = "0.75s"
+  }
     document.getElementById("score").style.transitionDuration = "1s"
     document.getElementById("score").style.color = Color3
 setTimeout(() =>{
 TitleColor()
-}, 1000
+}, timer
+
 )
 }
 function Change2ivan() {
