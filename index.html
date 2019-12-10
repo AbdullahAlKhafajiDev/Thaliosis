@@ -115,6 +115,7 @@ preloadImage("Thalia Photos/Gun.jpg")
 preloadImage("Thalia Photos/Heart.jpg")
 preloadImage("Thalia Photos/Sibling.jpg")
 let photo = photos[Math.floor(Math.random()*photos.length)];
+let choices = Math.floor(Math.random() * 2)
 let bound1 = true;
 let Thalias = 0;
 let respose;
@@ -298,40 +299,47 @@ if (bound1 == false){
   Thalias = Thalias - 1;
   if (switch2 == false){
   if (Thalias < 2){
+    if (choices == 0){
     response = "stop recording and help Ivan.";
+    }
+    if (choices == 1){
+    response = "Abdul is sitting right there smiling and anticipating a disaster.";
+    }
   }
-  if (Thalias == 2 || Thalias == 3 || Thalias == 4){
+  if (Thalias >= 2 && Thalias <= 4){
+    if (choices == 0){
     response = "Abdul snap out of your Hiroshima flashback and stop Thalia.";
+    }
+    if (choices == 1){
+    response = "Ivan says in an attempt to calm the atmosphere 'you probably shouldn't do that.";
+    }
   }
-  if (Thalias == 5 || Thalias == 6 || Thalias == 7){
-    response = "ok Leia thanks for the contribution.";
+  if (Thalias > 4 && Thalias < 8){
+    if (choices == 0){
+    response = "Leia's reminding Thalia that everyone can see what's happening in that room, and shit will go downhill if the Librarian sees us.";
+    }
+    if (choices == 1){
+    response = "Leia's thinking about throwing Ivan off a building for not helping.";
+    }
   }
-  if (Thalias > 7){
-    response = "alright Pablo hold the table before she flips it.";
+  if (Thalias > 7 && Thalias < 11){
+   if (choices == 0){
+    response = "Pablo's holding the table down with both hands so Thalia wouldn't flip it.";
+    }
+    if (choices == 1){
+    response = "Abdul's thinking about which drug would instantly knock out Thalia if she doesn't calm down.";
+    }
   }
-  document.getElementById("score").innerHTML = "You tried to stop Thalia's mental breakdown " + Thalias + " times, " + response;
+  if (Thalias > 10){
+  document.body.style.backgroundImage 
+   if (choices == 0){
+    response = "Thalia has finally realized what was going on and snapped out of her mental breakdown... Good Job :D";
+    }
+    if (choices == 1){
+    response = "press F to pay respects to Ivan for being a major help during that incident.";
+    }
   }
-  if (switch2 == true){
-  if (Thalias < 1){
-    response = "Ivan's getting A LOT of hair compliments.";
-  }
-  if (Thalias == 1){
-    response = "now you get how hard it is to be Ivan.";
-  }
-  if (Thalias == 2){
-    response = "Ivan's still getting beat up by Thalia.";
-  }
-  if (Thalias == 3){
-    response = "Ivan's getting beat up by Leia.";
-  }
-  if (Thalias == 4 ){
-    response = "didn't think I'd see the day.. I'm so proud ^_^";
-  }  
-  if (Thalias > 4){
-    response = "if the browser didn't lag or glitch... then you is a LEGEND and I officially owe you a baggie full of 100 pennies!";
-  }    
-  document.getElementById("score").innerHTML = "Ivan has successfuly dodged " + Thalias + " females, " + response;
-  }
+
  setTimeout(
     () => {
     document.getElementById("score").style.transitionDuration = "0.5s";
