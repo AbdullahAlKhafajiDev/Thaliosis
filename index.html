@@ -1,13 +1,14 @@
 <button id = "button2" onclick="Change2ivan()" onmouseover="chngButton('button2', '#ffc1ab', 'black')" onmouseout="chngBack('button2', 'black', '#ffe1d6')">Da'quavious Mode</button>
 <p id = "update" onclick = "WhatsNew()">latest update: 12/10/19 - 3:59 am</p>
-
+<button id = "button3" onmouseover = "chngButton('button3', '#bf93e6', 'black')" onmouseout = "chngBack('button3', 'black', '#ecd6ff')">coming soon</button>
 <div>
 <body id = "body">
   
   
   
   <style>
-  body {
+    
+body {
   background:rgb(214, 252, 255);
   font-weight: 300;
   height: 100vh;
@@ -17,8 +18,23 @@
   text-align: center;
   font-family: Helvetica neue, roboto;
   transition-duration: 0.6s;
-  
+    }  
+#button3 {
+  background-color: #ecd6ff;
+  position: absolute;
+  right: 20;
+  bottom: 20;
+  border: none;
+  font-size: 30px;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition-duration: 0.4s; 
+  cursor: pointer;
 }
+
 img {
   position: static;
   width: 200px;
