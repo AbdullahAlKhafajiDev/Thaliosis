@@ -160,6 +160,7 @@ graph.parentNode.removeChild(graph);
 update.parentNode.removeChild(update);
 button2.parentNode.removeChild(button2);
 button1.parentNode.removeChild(button1);
+button3.parentNode.removeChild(button3);
 document.getElementById("image1").style.transitionDuration = "0s";
 document.getElementById("image1").style.opacity = "0";
 if (switch2 == false){
@@ -423,6 +424,7 @@ function DarkMode(){
   update.parentNode.removeChild(update)
   image1.parentNode.removeChild(image1)
   button2.parentNode.removeChild(button2)
+  button3.parentNode.removeChild(button3);
   document.getElementById("graph").style.color = "rgb(138, 138, 138)"
   document.getElementById("button1").innerHTML = "Another Quote"
   counter = true
@@ -450,13 +452,6 @@ function backNormal (){
   if (i == true){
   document.getElementById("image1").style.transform = "rotate(0deg)"
 }}
-function Bigger(){
-  button1.parentNode.removeChild(button1)
-  graph.parentNode.removeChild(graph)
-  document.getElementById("image1").style.marginRight = "420px"
-  document.getElementById("image1").style.height = "1000px"
-  document.getElementById("image1").style.width = "1000px"
-}
 function EndColor(){
     r = Math.random() * (254 - 0) + 0;
     g = Math.random() * (254 - 0) + 0;
