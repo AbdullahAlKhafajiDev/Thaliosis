@@ -1,12 +1,12 @@
 <button id = "button2" onclick="Change2ivan()" onmouseover="chngButton('button2', '#ffc1ab', 'black')" onmouseout="chngBack('button2', 'black', '#ffe1d6')">Da'quavious Mode</button>
 <p id = "update" onclick = "WhatsNew()">latest update: 12/15/19 - 3:55 am </p>
 <audio controls id = "music">
-  <source src="Music/Thaliosis Final mix.mp3" type="audio/mpeg">
+  <source src="Music/Meow by lil tall (online-audio-converter.com).mp3" type="audio/mpeg">
 </audio>
 <div>
 <body id = "body">
 <button id = "button3" onclick = "musicPlayer()" onmouseover = "chngButton('button3', '#bf93e6', 'black')" onmouseout = "chngBack('button3', 'black', '#ecd6ff')">Jams</button>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
   
   
@@ -29,6 +29,7 @@ font-style: normal;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
 #music {
   opacity: 0;
   left: 0;
@@ -132,7 +133,6 @@ let level1 = 500
 let level2 = 1000
 let counter = false
 let switch4 = true
-var myMusic = document.getElementById("music");
 quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "*dying pigeon sounds*", "<q>did y'all think we'd have this kind of friendship? just kidding we're not friends.</q>", 
  "<q>Ivan has a little creepy pedophile smile.</q>", "<q>You freaking boomer!</q>",
@@ -141,6 +141,11 @@ quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEOW MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
 photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
+Audios = ["Music/Meow by lil tall (online-audio-converter.com).mp3","Music/Thaliosis Final mix.mp3"]
+Audio = Audios[Math.floor(Math.random()*Audios.length)]
+document.getElementById("music").src = Audio
+var myMusic = document.getElementById("music")
+
 function preloadImage(url)
 {
     var img=new Image();
@@ -175,7 +180,6 @@ graph.parentNode.removeChild(graph);
 update.parentNode.removeChild(update);
 button2.parentNode.removeChild(button2);
 button1.parentNode.removeChild(button1);
-button3.parentNode.removeChild(button3);
 document.getElementById("image1").style.transitionDuration = "0s";
 document.getElementById("image1").style.opacity = "0";
 if (switch2 == false){
@@ -439,7 +443,6 @@ function DarkMode(){
   update.parentNode.removeChild(update)
   image1.parentNode.removeChild(image1)
   button2.parentNode.removeChild(button2)
-  button3.parentNode.removeChild(button3);
   document.getElementById("graph").style.color = "rgb(138, 138, 138)"
   document.getElementById("button1").innerHTML = "Another Quote"
   counter = true
@@ -467,6 +470,13 @@ function backNormal (){
   if (i == true){
   document.getElementById("image1").style.transform = "rotate(0deg)"
 }}
+function Bigger(){
+  button1.parentNode.removeChild(button1)
+  graph.parentNode.removeChild(graph)
+  document.getElementById("image1").style.marginRight = "420px"
+  document.getElementById("image1").style.height = "1000px"
+  document.getElementById("image1").style.width = "1000px"
+}
 function EndColor(){
     r = Math.random() * (254 - 0) + 0;
     g = Math.random() * (254 - 0) + 0;
@@ -478,6 +488,7 @@ function TitleColor(){
     g = Math.random() * (150 - 0) + 0;
     b = Math.random() * (150 - 0) + 0;
     Color3 = 'rgb('+r+','+g+', '+b+')';
+
   if (Thalias > 10){
     timer = 750
     r = Math.random() * (150 - 0) + 150;
@@ -492,6 +503,7 @@ function TitleColor(){
 setTimeout(() =>{
 TitleColor()
 }, timer
+
 )
 }
 function Change2ivan() {
@@ -564,16 +576,20 @@ function SlowMo() {
 document.getElementById("button2").style.transitionDuration = "0.4s"
 }
 function WhatsNew(){
-  document.getElementById("update").innerHTML = "What's new: <br>- Added music button. <br>- Added music 'Bitches in 2014 ft. lil Tall'. <br>- Fixed bugs regarding screen ratios.  "
+  document.getElementById("update").innerHTML = "What's new: <br>- Added music button. <br>- Added music 'Bitches in 2014 ft. lil Tall'. "
 }
 let RotationSwitch = true
 let musicPlayerSwitch = true
 function musicPlayer(){
   if (musicPlayerSwitch == true){
+  Audio = Audios[Math.floor(Math.random()*Audios.length)]
+  document.getElementById("music").src = Audio
+  myMusic = document.getElementById("music")
   document.getElementById("button1").disabled = true;
   document.getElementById("button2").disabled = true;
   document.getElementById("update").disabled = true;
   document.getElementById("graph").disabled = true;
+
   document.getElementById("button1").style.opacity = "0"
   document.getElementById("button2").style.opacity = "0"
   document.getElementById("update").style.opacity = "0"
@@ -594,6 +610,7 @@ setTimeout(() => {
   document.getElementById("button2").disabled = false;
   document.getElementById("update").disabled = false;
   document.getElementById("graph").disabled = false;
+
   document.getElementById("button1").style.opacity = "1"
   document.getElementById("button2").style.opacity = "1"
   document.getElementById("update").style.opacity = "1"
@@ -641,6 +658,7 @@ setTimeout(
 function playAudio() {
   myMusic.play();
 }
+
 function pauseAudio() {
   myMusic.pause();
 }
