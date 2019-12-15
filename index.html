@@ -133,8 +133,6 @@ let level1 = 500
 let level2 = 1000
 let counter = false
 let switch4 = true
-var myMusic = document.getElementById("music");
-
 quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "*dying pigeon sounds*", "<q>did y'all think we'd have this kind of friendship? just kidding we're not friends.</q>", 
  "<q>Ivan has a little creepy pedophile smile.</q>", "<q>You freaking boomer!</q>",
@@ -143,6 +141,9 @@ quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEOW MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
 photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
+Audios = ["Music/Meow by lil tall.m4a", "Music/Thaliosis 1 (online-audio-converter.com).mp3"]
+let Audio = Audios[Math.floor(Math.random()*Audios.length)];
+var myMusic = Audio
 function preloadImage(url)
 {
     var img=new Image();
@@ -574,6 +575,8 @@ let RotationSwitch = true
 let musicPlayerSwitch = true
 function musicPlayer(){
   if (musicPlayerSwitch == true){
+  Audio = Audios[Math.floor(Math.random()*Audios.length)];
+  myMusic = Audio
   document.getElementById("button1").disabled = true;
   document.getElementById("button2").disabled = true;
   document.getElementById("update").disabled = true;
