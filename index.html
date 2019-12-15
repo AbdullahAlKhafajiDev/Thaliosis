@@ -29,7 +29,6 @@ font-style: normal;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
 #music {
   opacity: 0;
   left: 0;
@@ -133,6 +132,7 @@ let level1 = 500
 let level2 = 1000
 let counter = false
 let switch4 = true
+var myMusic = document.getElementById("music");
 quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "*dying pigeon sounds*", "<q>did y'all think we'd have this kind of friendship? just kidding we're not friends.</q>", 
  "<q>Ivan has a little creepy pedophile smile.</q>", "<q>You freaking boomer!</q>",
@@ -141,9 +141,6 @@ quotes = ["*choking sounds*", "<q>i'M sO qUiRkY</q>",
  "<q>will you marry me in 20 years Ivan?</q>", "<q>hey welcome back to my channel, this is my wife Ivan</q>", 
  "<q>hey this is my girlfriend Ivina</q>", "<q>meow meow meow meow</q>", "<q>MEOW MEWO MEOW MEOWWWWWW</q>", "<q>kill all men! kill all men!</q>"]
 photos = ["Thalia Photos/Bg smile.jpg", "Thalia Photos/Disgusted.jpg", "Thalia Photos/Gun.jpg", "Thalia Photos/Heart.jpg", "Thalia Photos/Sibling.jpg"]
-Audios = ["Music/Meow by lil tall.m4a", "Music/Thaliosis 1 (online-audio-converter.com).mp3"]
-let Audio = Audios[Math.floor(Math.random()*Audios.length)];
-var myMusic = Audio
 function preloadImage(url)
 {
     var img=new Image();
@@ -481,7 +478,6 @@ function TitleColor(){
     g = Math.random() * (150 - 0) + 0;
     b = Math.random() * (150 - 0) + 0;
     Color3 = 'rgb('+r+','+g+', '+b+')';
-
   if (Thalias > 10){
     timer = 750
     r = Math.random() * (150 - 0) + 150;
@@ -496,7 +492,6 @@ function TitleColor(){
 setTimeout(() =>{
 TitleColor()
 }, timer
-
 )
 }
 function Change2ivan() {
@@ -575,13 +570,10 @@ let RotationSwitch = true
 let musicPlayerSwitch = true
 function musicPlayer(){
   if (musicPlayerSwitch == true){
-  Audio = Audios[Math.floor(Math.random()*Audios.length)];
-  myMusic = Audio
   document.getElementById("button1").disabled = true;
   document.getElementById("button2").disabled = true;
   document.getElementById("update").disabled = true;
   document.getElementById("graph").disabled = true;
-
   document.getElementById("button1").style.opacity = "0"
   document.getElementById("button2").style.opacity = "0"
   document.getElementById("update").style.opacity = "0"
@@ -602,7 +594,6 @@ setTimeout(() => {
   document.getElementById("button2").disabled = false;
   document.getElementById("update").disabled = false;
   document.getElementById("graph").disabled = false;
-
   document.getElementById("button1").style.opacity = "1"
   document.getElementById("button2").style.opacity = "1"
   document.getElementById("update").style.opacity = "1"
@@ -650,7 +641,6 @@ setTimeout(
 function playAudio() {
   myMusic.play();
 }
-
 function pauseAudio() {
   myMusic.pause();
 }
