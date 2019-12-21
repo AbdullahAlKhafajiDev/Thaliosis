@@ -292,6 +292,16 @@ bound1 = false;
 }, 12 * 1000
 );
 }
+var Height = screen.height
+var Width = screen.width
+ if (Width > Height){
+  Height = screen.height/1.1
+  Width = screen.width/4
+ }
+else {
+  Height = screen.height/4
+  Width = screen.width/1.1  
+}
 function ActualRotation(){
 if (bound1 == true){
   if (switch2 == true){
@@ -305,9 +315,9 @@ if (bound1 == true){
   document.body.style.transitionDuration = "0.2s";
   document.body.style.backgroundColor = Color2;
   document.getElementById("image1").style.borderColor = "#ffffff";
-  var x = Math.floor((Math.random() * (screen.height/1.1)) + 0);
+  var x = Math.floor((Math.random() * (Height)) + 0);
   x *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
-  var y = Math.floor((Math.random() * (screen.width/4)) + 0);
+  var y = Math.floor((Math.random() * (Width)) + 0);
   y *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var r = Math.floor((Math.random() * 1000) + 0);
   r *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
@@ -319,9 +329,9 @@ if (bound1 == true){
   EndColor();
   document.body.style.transitionDuration = "0.2s";
   document.body.style.backgroundColor = Color2;
-  var x = Math.floor((Math.random() * (screen.height/1.1)) + 0);
+  var x = Math.floor((Math.random() * (Height)) + 0);
   x *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
-  var y = Math.floor((Math.random() * (screen.width/4)) + 0);
+  var y = Math.floor((Math.random() * (Width)) + 0);
   y *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
   var r = Math.floor((Math.random() * 1000) + 0);
   r *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
