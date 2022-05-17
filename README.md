@@ -4,3 +4,5 @@
 <p>I had lots of fun solving problems as I went; it truly was a wonderful experience to have.</p>
 
 I always like looking back at this project. It really shows how much my knowledge has grown since the creation of this project.
+
+website is (https://thaliosis.netlify.app/)
